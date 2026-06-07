@@ -1,0 +1,136 @@
+/* Core Styling & Dark Palette */
+body {
+    background-color: #1c2128;
+    color: #cdd9e5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #539bf5;
+    text-decoration: none;
+}
+
+/* Ensure underlines only appear on hover, per your latest commit */
+a:hover {
+    text-decoration: underline;
+}
+
+/* Two-column Flexbox Layout */
+.container {
+    display: flex;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    gap: 60px;
+}
+
+/* Left Sidebar Fixed Width */
+.sidebar {
+    width: 240px;
+    flex-shrink: 0;
+}
+
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #444c56;
+}
+
+.sidebar h1 {
+    font-size: 1.5rem;
+    margin: 15px 0 5px 0;
+    color: #adbac7;
+}
+
+.sidebar .subtitle {
+    font-size: 0.9rem;
+    color: #768390;
+    margin-bottom: 25px;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.social-links li {
+    margin-bottom: 12px;
+    color: #adbac7;
+}
+
+.social-links i {
+    width: 20px;
+    margin-right: 8px;
+    color: #768390;
+}
+
+.social-links a {
+    color: #adbac7;
+}
+
+/* Right Content Area Fluid */
+.content {
+    flex-grow: 1;
+}
+
+.top-nav {
+    border-bottom: 1px solid #444c56;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.top-nav a {
+    color: #adbac7;
+    margin-right: 30px;
+    font-weight: 600;
+    padding-bottom: 12px;
+}
+
+.top-nav a.active {
+    border-bottom: 2px solid #ec775c; /* Accent orange indicator underline */
+    color: #adbac7;
+}
+
+h2 {
+    font-size: 1.6rem;
+    color: #adbac7;
+    border-bottom: 1px solid #373e47;
+    padding-bottom: 8px;
+    margin-top: 40px;
+}
+
+/* Academic/Education Layouts */
+.edu-item {
+    margin-bottom: 20px;
+}
+
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    color: #adbac7;
+}
+
+.edu-sub {
+    color: #768390;
+    font-size: 0.95rem;
+}
+
+.edu-item p {
+    margin: 5px 0 0 0;
+    font-size: 0.95rem;
+}
+
+footer {
+    margin-top: 60px;
+    border-top: 1px solid #373e47;
+    padding-top: 15px;
+    font-size: 0.8rem;
+    color: #768390;
+}
