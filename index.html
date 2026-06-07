@@ -40,60 +40,70 @@
         </ul>
       </aside>
 
-      <main class="content">
+      <main class="main-content">
         <nav class="top-nav">
-          <a href="index.html" class="active">Home</a>
-          <a href="#publications">Publications</a>
+          <a href="javascript:void(0);" onclick="showView('home')">Home</a>
+          <a href="javascript:void(0);" onclick="showView('publications')">Publications</a>
         </nav>
-  
-        <section id="about">
-          <h2>About</h2>
-          <p>I am a PhD student in the
-            <a
-              href="https://www.colorado.edu/faculty/nicotra/robotics-optimization-and-constrained-control">ROCC
-              Team</a> at the University of Colorado Boulder, where I am advised
-            by <a href="https://www.colorado.edu/faculty/nicotra/">
-            Prof. Marco M.  Nicotra</a>. My research focuses on combining
-            control barrier functions with elements from the reference governor
-            literature.
-          </p>
-          <p>
-            I became interested in control theory during my masters at the
-            University of Wisconsin–Madison with <a
-            href="https://xu.me.wisc.edu/">Prof. Xiangru Xu</a>, where I worked
-            on motion planning for quadcopters and autonomous vehicles
-            leveraging the differential flatness property.
-          </p>
-        </section>
 
-        <section id="education">
-          <h2>Education</h2>
-          <p> <div><strong>University of Colorado Boulder</strong></div>
-            <div class="edu-degree">
-              <span><i>Ph.D. in Electrical & Computer Engineering</i></span>
-              <span>Expected Dec. 2026</span>
-            </div>
-          </p>
-          <p> <div><strong>University of Wisconsin–Madison</strong></div>
-            <div class="edu-degree">
-              <span>
-                <i>M.S. in Mechanical Engineering</i>
-                (<a href="assets/docs/ms-thesis.pdf">thesis</a>)
-              </span>
-              <span>2022</span>
-            </div>
-            <div class="edu-degree">
-              <span><i>B.S. in Mechanical Engineering</i></span>
-              <span>2020</span>
-            </div>
-          </p>
-          <p> <div><strong>Madison College</strong></div>
-            <div class="edu-degree">
-              <span><i>A.S. in Liberal Arts - Engineering</i></span>
-              <span>2017</span>
-            </div>
-          </p>
-        </section>
+        <div id="home-view" class="content-view" style="display: block;">
+          <section id="about">
+            <h2>About</h2>
+            <p>I am a PhD student in the
+              <a
+                href="https://www.colorado.edu/faculty/nicotra/robotics-optimization-and-constrained-control">ROCC
+                Team</a> at the University of Colorado Boulder, where I am advised
+              by <a href="https://www.colorado.edu/faculty/nicotra/">
+              Prof. Marco M.  Nicotra</a>. My research focuses on combining
+              control barrier functions with elements from the reference governor
+              literature.
+            </p>
+            <p>
+              I became interested in control theory during my masters at the
+              University of Wisconsin–Madison with <a
+              href="https://xu.me.wisc.edu/">Prof. Xiangru Xu</a>, where I worked
+              on motion planning for quadcopters and autonomous vehicles
+              leveraging the differential flatness property.
+            </p>
+          </section>
+
+          <section id="education">
+            <h2>Education</h2>
+            <p> <div><strong>University of Colorado Boulder</strong></div>
+              <div class="edu-degree">
+                <span><i>Ph.D. in Electrical & Computer Engineering</i></span>
+                <span>Expected Dec. 2026</span>
+              </div>
+            </p>
+            <p> <div><strong>University of Wisconsin–Madison</strong></div>
+              <div class="edu-degree">
+                <span>
+                  <i>M.S. in Mechanical Engineering</i>
+                  (<a href="assets/docs/ms-thesis.pdf">thesis</a>)
+                </span>
+                <span>2022</span>
+              </div>
+              <div class="edu-degree">
+                <span><i>B.S. in Mechanical Engineering</i></span>
+                <span>2020</span>
+              </div>
+            </p>
+            <p> <div><strong>Madison College</strong></div>
+              <div class="edu-degree">
+                <span><i>A.S. in Liberal Arts - Engineering</i></span>
+                <span>2017</span>
+              </div>
+            </p>
+          </section>
+        </div>
+
+        <div id="publications-view" class="content-view" style="display: none;">
+          <section id="publications">
+            <h2>Publications</h2>
+            <p>TMP</p>
+          </section>
+        </div>
+
       </main>
     </div>
 
@@ -102,4 +112,20 @@
     </footer>
 
   </body>
+
+  <script>
+    function showView(viewId) {
+      document.querySelectorAll('.content-view').forEach(view => {
+        view.style.display = 'none';
+      });
+
+      // Check if the element exists before accessing .style
+      const targetView = document.getElementById(viewId + '-view');
+      if (targetView) {
+        targetView.style.display = 'block';
+      } else {
+        console.error(`Element with ID "${viewId}-view" not found.`);
+      }
+    }
+  </script>
 </html>
