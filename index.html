@@ -42,11 +42,11 @@
 
       <main class="content">
         <nav class="top-nav">
-          <a href="javascript:void(0);"
+          <a href="#home"
              onclick="showView('home')"
              class="active">Home
           </a>
-          <a href="javascript:void(0);"
+          <a href="#publications"
             onclick="showView('publications')">
             Publications
           </a>
@@ -104,10 +104,21 @@
         </div>
 
         <div id="publications-view" class="content-view" style="display: none;">
-          <section id="publications">
-            <h2>Publications</h2>
+          <section id="pub-pending">
+            <h2>Under Review</h2>
             <p>TMP</p>
           </section>
+
+          <section id="pub-journal">
+            <h2>Journal Publications</h2>
+            <p>TMP</p>
+          </section>
+
+          <section id="pub-conference">
+            <h2>Conference Publications</h2>
+            <p>TMP</p>
+          </section>
+
         </div>
 
       </main>
@@ -120,27 +131,34 @@
   </body>
 
   <script>
-    function showView(viewId) {
-      // Hide all views
+    function updateView() {
+      // Get the view ID from the URL hash (default to 'home' if empty)
+      const viewId = window.location.hash.replace('#', '') || 'home';
+
+      // 1. Hide all views
       document.querySelectorAll('.content-view').forEach(view => {
         view.style.display = 'none';
       });
 
-      // Remove active class from all nav links
+      // 2. Remove active class from all nav links
       document.querySelectorAll('.top-nav a').forEach(link => {
         link.classList.remove('active');
       });
 
-      // Show the target view
+      // 3. Show target view and set active link
       const targetView = document.getElementById(viewId + '-view');
+      const targetLink = document.querySelector(`.top-nav a[href="#${viewId}"]`);
+
       if (targetView) {
         targetView.style.display = 'block';
-
-        // Add active class to the link that was clicked
-        // We find the link by its onclick attribute matching the viewId
-        const activeLink = document.querySelector(`.top-nav a[onclick*="'${viewId}'"]`);
-        if (activeLink) activeLink.classList.add('active');
+        if (targetLink) targetLink.classList.add('active');
       }
     }
+
+    // Listen for hash changes (when user clicks a link)
+    window.addEventListener('hashchange', updateView);
+
+    // Run once on page load/refresh
+    window.addEventListener('DOMContentLoaded', updateView);
   </script>
 </html>

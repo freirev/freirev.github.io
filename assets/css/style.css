@@ -96,6 +96,7 @@ a:hover {
   font-weight: 600;
   font-size: 1.2rem;
   padding-bottom: 5px;
+  border-bottom: 3px solid transparent;
 }
 .top-nav a:hover {
   color: var(--hover-color);
@@ -103,7 +104,7 @@ a:hover {
 }
 
 .top-nav a.active {
-    border-bottom: 3px solid var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 
