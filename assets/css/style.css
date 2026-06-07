@@ -1,24 +1,26 @@
-/* Core Styling & Dark Palette */
 body {
-    background-color: #1c2128;
-    color: #cdd9e5;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
+  background-color: #282c34; /* OneHalf Dark Background */
+  color: #abb2bf;            /* OneHalf Dark Foreground Text */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
+/* Links & Transitions */
 a {
-    color: #539bf5;
-    text-decoration: none;
+  color: #61afef;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
-
-/* Ensure underlines only appear on hover, per your latest commit */
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
+  color: #a3d2ff;
 }
 
-/* Two-column Flexbox Layout */
+/* ==========================================================================
+   2. Layout Structure (Two-Column Flexbox)
+   ========================================================================== */
 .container {
     display: flex;
     max-width: 1100px;
@@ -27,7 +29,7 @@ a:hover {
     gap: 60px;
 }
 
-/* Left Sidebar Fixed Width */
+/* Left Sidebar Area */
 .sidebar {
     width: 240px;
     flex-shrink: 0;
@@ -38,21 +40,22 @@ a:hover {
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    border: 1px solid #444c56;
+    border: 1px solid #3e4452;  /* OneHalf Dark Border Muted Gray */
 }
 
 .sidebar h1 {
     font-size: 1.5rem;
     margin: 15px 0 5px 0;
-    color: #adbac7;
+    color: #abb2bf;            /* Restored to default text color */
 }
 
 .sidebar .subtitle {
     font-size: 0.9rem;
-    color: #768390;
+    color: #5c6370;            /* OneHalf Dark Muted Comment Grey */
     margin-bottom: 25px;
 }
 
+/* Navigation & Social Link Lists */
 .social-links {
     list-style: none;
     padding: 0;
@@ -62,51 +65,56 @@ a:hover {
 
 .social-links li {
     margin-bottom: 12px;
-    color: #adbac7;
+    color: #abb2bf;
 }
 
 .social-links i {
     width: 20px;
     margin-right: 8px;
-    color: #768390;
+    color: #5c6370;
 }
 
 .social-links a {
-    color: #adbac7;
+    color: #abb2bf;
 }
 
-/* Right Content Area Fluid */
+/* Right Main Content Area */
 .content {
     flex-grow: 1;
 }
 
+/* Clean Top Navigation Banner */
 .top-nav {
-    border-bottom: 1px solid #444c56;
+    border-bottom: 1px solid #3e4452; /* Restored separation line */
     padding-bottom: 15px;
     margin-bottom: 30px;
 }
 
 .top-nav a {
-    color: #adbac7;
+    color: #abb2bf;
     margin-right: 30px;
     font-weight: 600;
     padding-bottom: 12px;
 }
 
+/* Active Index Indicator (Red Underline Accent) */
 .top-nav a.active {
-    border-bottom: 2px solid #ec775c; /* Accent orange indicator underline */
-    color: #adbac7;
+    border-bottom: 2px solid #e06c75; /* OneHalf Dark Red Accent Underline */
+    color: #abb2bf;
 }
 
+/* Section Headings with Separation Lines */
 h2 {
     font-size: 1.6rem;
-    color: #adbac7;
-    border-bottom: 1px solid #373e47;
+    color: #abb2bf;
+    border-bottom: 1px solid #3e4452; /* Restored separation lines between sections */
     padding-bottom: 8px;
     margin-top: 40px;
 }
 
-/* Academic/Education Layouts */
+/* ==========================================================================
+   3. Academic & Education Layouts
+   ========================================================================== */
 .edu-item {
     margin-bottom: 20px;
 }
@@ -114,11 +122,11 @@ h2 {
 .edu-header {
     display: flex;
     justify-content: space-between;
-    color: #adbac7;
+    color: #abb2bf;
 }
 
 .edu-sub {
-    color: #768390;
+    color: #5c6370;
     font-size: 0.95rem;
 }
 
@@ -127,10 +135,16 @@ h2 {
     font-size: 0.95rem;
 }
 
+/* Anti-Scraper Email Class */
+.reverse-email {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+
 footer {
-    margin-top: 60px;
-    border-top: 1px solid #373e47;
-    padding-top: 15px;
-    font-size: 0.8rem;
-    color: #768390;
+  margin-top: 60px;
+  border-top: 1px solid #3e4452;
+  padding-top: 15px;
+  font-size: 0.8rem;
+  color: #5c6370;
 }
