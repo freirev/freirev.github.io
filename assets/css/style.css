@@ -1,25 +1,24 @@
+/* colors */
 :root {
-    /* OneHalf Dark Theme Colors */
-    --bg-color: #282c34;            /* Black */
-    --fg-color: #dcdfe4;            /* White */
-    --link-color: #61afef;          /* Blue */
-    --hover-color: #56b6c2;         /* Cyan */
-    --border-color: #dcdfe4;        /* White */
-    --accent-color: #e06c75;        /* Red */
-    --fg-muted-color: #919baa;      /* Grey */
+  --bg-color: #282c34;            /* Black */
+  --fg-color: #dcdfe4;            /* White */
+  --link-color: #61afef;          /* Blue */
+  --hover-color: #56b6c2;         /* Cyan */
+  --border-color: #dcdfe4;        /* White */
+  --accent-color: #e06c75;        /* Red */
+  --fg-muted-color: #919baa;      /* Grey */
 }
 
+/* global settings */
 body {
   background-color: var(--bg-color);
   color: var(--fg-color);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   font-size: 1.10rem;
   line-height: 1.6;
-  margin: 0;
-  padding: 0;
 }
 
-/* Links & Transitions */
+/* links & hover */
 a {
   color: var(--link-color);
   text-decoration: none;
@@ -30,90 +29,86 @@ a:hover {
   color: var(--hover-color);
 }
 
-/* 2. Layout Structure (Two-Column Flexbox) */
+/* layout (flexbox) */
 .container {
-    display: flex;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    gap: 60px;
+  display: flex;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  gap: 60px;
 }
 
-/* Left Sidebar Area */
+/* left sidebar area */
 .sidebar {
-    width: 240px;
-    flex-shrink: 0;
+  width: 240px;
+  flex-shrink: 0;
 }
-
 .profile-pic {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--border-color);
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-color);
 }
-
 .sidebar h1 {
-    margin: 0px 0 -5px 0;
-}
-
-.sidebar .subtitle {
-    font-size: 0.9rem;
-    color: var(--fg-muted-color);
-    margin-bottom: 20px;
+  margin: 0px 0 -10px 0;
 }
 
 .social-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 0.9rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
 }
 
 .social-links li {
-    margin-bottom: 12px;
-    color: var(--fg-muted-color);
+  margin-bottom: 12px;
+  color: var(--fg-muted-color);
 }
 
 .social-links i {
-    width: 20px;
-    margin-right: 8px;
-    color: var(--fg-muted-color);
+  width: 20px;
+  margin-right: 8px;
 }
 
 .social-links a {
-    color: var(--fg-muted-color);
+  color: var(--fg-muted-color);
 }
 .social-links a:hover {
-    color: var(--hover-color);
+  color: var(--hover-color);
 }
 
-/* Right Main Content Area */
+/* right main-content area */
 .content {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .top-nav {
-    padding-bottom: 15px;
-    margin-bottom: 30px;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 .top-nav a {
-    color: var(--fg-muted-color);
-    margin-right: 30px;
-    font-weight: 600;
-    padding-bottom: 12px;
+  color: var(--fg-muted-color);
+  margin-right: 30px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding-bottom: 5px;
+}
+.top-nav a:hover {
+  color: var(--hover-color);
+  text-decoration: none;
 }
 
 .top-nav a.active {
     border-bottom: 3px solid var(--accent-color);
-    color: var(--fg-muted-color);
 }
+
 
 /* Section Headings with Separation Lines */
 h2 {
     color: var(--fg-color);
-    border-bottom: 1px solid var(--fg-muted-color);
+    border-bottom: 1px solid var(--accent-color);
     padding-bottom: 8px;
     margin-top: 40px;
 }
@@ -134,7 +129,7 @@ h2 {
 
 footer {
   margin-top: 60px;
-  border-top: 1px solid var(--fg-muted-color);
+  border-top: 1px solid var(--accent-color);
   padding-top: 15px;
   font-size: 0.8rem;
   color: var(--fg-muted-color);
