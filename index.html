@@ -42,14 +42,8 @@
 
       <main class="content">
         <nav class="top-nav">
-          <a href="#home"
-             onclick="showView('home')"
-             class="active">Home
-          </a>
-          <a href="#publications"
-            onclick="showView('publications')">
-            Publications
-          </a>
+          <a href="#home" class="active">Home</a>
+          <a href="#publications">Publications</a>
         </nav>
 
         <div id="home-view" class="content-view" style="display: block;">
@@ -75,13 +69,16 @@
 
           <section id="education">
             <h2>Education</h2>
-            <p> <div><strong>University of Colorado Boulder</strong></div>
+
+            <div class="edu-item">
+              <strong>University of Colorado Boulder</strong>
               <div class="edu-degree">
                 <span><i>Ph.D. in Electrical & Computer Engineering</i></span>
                 <span>Expected Dec. 2026</span>
               </div>
-            </p>
-            <p> <div><strong>University of Wisconsin–Madison</strong></div>
+            </div>
+            <div class="edu-item">
+              <strong>University of Wisconsin–Madison</strong>
               <div class="edu-degree">
                 <span>
                   <i>M.S. in Mechanical Engineering</i>
@@ -93,13 +90,14 @@
                 <span><i>B.S. in Mechanical Engineering</i></span>
                 <span>2020</span>
               </div>
-            </p>
-            <p> <div><strong>Madison College</strong></div>
+            </div>
+            <div class="edu-item">
+              <strong>Madison College</strong>
               <div class="edu-degree">
                 <span><i>A.S. in Liberal Arts - Engineering</i></span>
                 <span>2017</span>
               </div>
-            </p>
+            </div>
           </section>
         </div>
 
@@ -128,37 +126,38 @@
       <p>&copy; 2026 Victor Freire</p>
     </footer>
 
+    <script>
+      function updateView() {
+        // Get the view ID from the URL hash (default to 'home' if empty)
+        const viewId = window.location.hash.replace('#', '') || 'home';
+
+        // 1. Hide all views
+        document.querySelectorAll('.content-view').forEach(view => {
+          view.style.display = 'none';
+        });
+
+        // 2. Remove active class from all nav links
+        document.querySelectorAll('.top-nav a').forEach(link => {
+          link.classList.remove('active');
+        });
+
+        // 3. Show target view and set active link
+        const targetView = document.getElementById(viewId + '-view');
+        const targetLink = document.querySelector(`.top-nav a[href="#${viewId}"]`);
+
+        if (targetView) {
+          targetView.style.display = 'block';
+          if (targetLink) targetLink.classList.add('active');
+        }
+      }
+
+      // Listen for hash changes (when user clicks a link)
+      window.addEventListener('hashchange', updateView);
+
+      // Run once on page load/refresh
+      window.addEventListener('DOMContentLoaded', updateView);
+    </script>
+
   </body>
 
-  <script>
-    function updateView() {
-      // Get the view ID from the URL hash (default to 'home' if empty)
-      const viewId = window.location.hash.replace('#', '') || 'home';
-
-      // 1. Hide all views
-      document.querySelectorAll('.content-view').forEach(view => {
-        view.style.display = 'none';
-      });
-
-      // 2. Remove active class from all nav links
-      document.querySelectorAll('.top-nav a').forEach(link => {
-        link.classList.remove('active');
-      });
-
-      // 3. Show target view and set active link
-      const targetView = document.getElementById(viewId + '-view');
-      const targetLink = document.querySelector(`.top-nav a[href="#${viewId}"]`);
-
-      if (targetView) {
-        targetView.style.display = 'block';
-        if (targetLink) targetLink.classList.add('active');
-      }
-    }
-
-    // Listen for hash changes (when user clicks a link)
-    window.addEventListener('hashchange', updateView);
-
-    // Run once on page load/refresh
-    window.addEventListener('DOMContentLoaded', updateView);
-  </script>
 </html>
