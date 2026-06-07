@@ -1,7 +1,19 @@
+:root {
+    /* OneHalf Dark Theme Colors */
+    --bg-color: #282c34;            /* Black */
+    --fg-color: #dcdfe4;            /* White */
+    --link-color: #61afef;          /* Blue */
+    --hover-color: #56b6c2;         /* Cyan */
+    --border-color: #dcdfe4;        /* White */
+    --accent-color: #e06c75;        /* Red */
+    --fg-muted-color: #919baa;      /* Grey */
+}
+
 body {
-  background-color: #282c34; /* OneHalf Dark Background */
-  color: #abb2bf;            /* OneHalf Dark Foreground Text */
+  background-color: var(--bg-color);
+  color: var(--fg-color);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 1.10rem;
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -9,18 +21,16 @@ body {
 
 /* Links & Transitions */
 a {
-  color: #61afef;
+  color: var(--link-color);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 a:hover {
   text-decoration: underline;
-  color: #a3d2ff;
+  color: var(--hover-color);
 }
 
-/* ==========================================================================
-   2. Layout Structure (Two-Column Flexbox)
-   ========================================================================== */
+/* 2. Layout Structure (Two-Column Flexbox) */
 .container {
     display: flex;
     max-width: 1100px;
@@ -40,22 +50,19 @@ a:hover {
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    border: 1px solid #3e4452;  /* OneHalf Dark Border Muted Gray */
+    border: 2px solid var(--border-color);
 }
 
 .sidebar h1 {
-    font-size: 1.5rem;
-    margin: 15px 0 5px 0;
-    color: #abb2bf;            /* Restored to default text color */
+    margin: 0px 0 -5px 0;
 }
 
 .sidebar .subtitle {
     font-size: 0.9rem;
-    color: #5c6370;            /* OneHalf Dark Muted Comment Grey */
-    margin-bottom: 25px;
+    color: var(--fg-muted-color);
+    margin-bottom: 20px;
 }
 
-/* Navigation & Social Link Lists */
 .social-links {
     list-style: none;
     padding: 0;
@@ -65,17 +72,20 @@ a:hover {
 
 .social-links li {
     margin-bottom: 12px;
-    color: #abb2bf;
+    color: var(--fg-muted-color);
 }
 
 .social-links i {
     width: 20px;
     margin-right: 8px;
-    color: #5c6370;
+    color: var(--fg-muted-color);
 }
 
 .social-links a {
-    color: #abb2bf;
+    color: var(--fg-muted-color);
+}
+.social-links a:hover {
+    color: var(--hover-color);
 }
 
 /* Right Main Content Area */
@@ -83,56 +93,37 @@ a:hover {
     flex-grow: 1;
 }
 
-/* Clean Top Navigation Banner */
 .top-nav {
-    border-bottom: 1px solid #3e4452; /* Restored separation line */
     padding-bottom: 15px;
     margin-bottom: 30px;
 }
 
 .top-nav a {
-    color: #abb2bf;
+    color: var(--fg-muted-color);
     margin-right: 30px;
     font-weight: 600;
     padding-bottom: 12px;
 }
 
-/* Active Index Indicator (Red Underline Accent) */
 .top-nav a.active {
-    border-bottom: 2px solid #e06c75; /* OneHalf Dark Red Accent Underline */
-    color: #abb2bf;
+    border-bottom: 3px solid var(--accent-color);
+    color: var(--fg-muted-color);
 }
 
 /* Section Headings with Separation Lines */
 h2 {
-    font-size: 1.6rem;
-    color: #abb2bf;
-    border-bottom: 1px solid #3e4452; /* Restored separation lines between sections */
+    color: var(--fg-color);
+    border-bottom: 1px solid var(--fg-muted-color);
     padding-bottom: 8px;
     margin-top: 40px;
 }
 
-/* ==========================================================================
-   3. Academic & Education Layouts
-   ========================================================================== */
-.edu-item {
-    margin-bottom: 20px;
-}
 
-.edu-header {
-    display: flex;
-    justify-content: space-between;
-    color: #abb2bf;
-}
-
-.edu-sub {
-    color: #5c6370;
-    font-size: 0.95rem;
-}
-
-.edu-item p {
-    margin: 5px 0 0 0;
-    font-size: 0.95rem;
+/* Right-justify degree dates */
+.edu-degree {
+  margin-left: 1rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Anti-Scraper Email Class */
@@ -143,8 +134,8 @@ h2 {
 
 footer {
   margin-top: 60px;
-  border-top: 1px solid #3e4452;
+  border-top: 1px solid var(--fg-muted-color);
   padding-top: 15px;
   font-size: 0.8rem;
-  color: #5c6370;
+  color: var(--fg-muted-color);
 }
