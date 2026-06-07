@@ -40,10 +40,16 @@
         </ul>
       </aside>
 
-      <main class="main-content">
+      <main class="content">
         <nav class="top-nav">
-          <a href="javascript:void(0);" onclick="showView('home')">Home</a>
-          <a href="javascript:void(0);" onclick="showView('publications')">Publications</a>
+          <a href="javascript:void(0);"
+             onclick="showView('home')"
+             class="active">Home
+          </a>
+          <a href="javascript:void(0);"
+            onclick="showView('publications')">
+            Publications
+          </a>
         </nav>
 
         <div id="home-view" class="content-view" style="display: block;">
@@ -115,16 +121,25 @@
 
   <script>
     function showView(viewId) {
+      // Hide all views
       document.querySelectorAll('.content-view').forEach(view => {
         view.style.display = 'none';
       });
 
-      // Check if the element exists before accessing .style
+      // Remove active class from all nav links
+      document.querySelectorAll('.top-nav a').forEach(link => {
+        link.classList.remove('active');
+      });
+
+      // Show the target view
       const targetView = document.getElementById(viewId + '-view');
       if (targetView) {
         targetView.style.display = 'block';
-      } else {
-        console.error(`Element with ID "${viewId}-view" not found.`);
+
+        // Add active class to the link that was clicked
+        // We find the link by its onclick attribute matching the viewId
+        const activeLink = document.querySelector(`.top-nav a[onclick*="'${viewId}'"]`);
+        if (activeLink) activeLink.classList.add('active');
       }
     }
   </script>

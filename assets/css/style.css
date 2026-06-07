@@ -80,6 +80,8 @@ a:hover {
 
 /* right main-content area */
 .content {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
 }
 
@@ -135,32 +137,3 @@ footer {
   font-size: 0.8rem;
   color: var(--fg-muted-color);
 }
-
-
-
-/* TODO */
-.main-content{
-  display: flex;
-  flex-direction: column;
-}
-
-.top-nav {
-  display: flex;
-  gap: 1.5rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid #3e4451; /* Subtle divider under nav lines */
-  margin-bottom: 2rem;
-}
-
-.top-nav a {
-  color: #abb2bf; /* Muted OneHalf text default for unselected tabs */
-  font-weight: 500;
-  transition: color 0.2s ease; /* Buttery smooth fade from your rules */
-}
-
-.top-nav a:hover {
-  color: #61afef; /* Classic OneHalf blue pops on interaction */
-}
-
-
-
