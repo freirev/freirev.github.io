@@ -10,6 +10,10 @@
 }
 
 /* global settings */
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--fg-color);
