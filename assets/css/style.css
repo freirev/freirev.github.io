@@ -110,14 +110,19 @@ a:hover {
 
 /* section headings with separation lines */
 h2 {
-    color: var(--fg-color);
-    border-bottom: 1px solid var(--accent-color);
-    padding-bottom: 8px;
-    margin-top: 40px;
+  color: var(--fg-color);
+  border-bottom: 1px solid var(--accent-color);
+  padding-bottom: 8px;
+  margin-top: 40px;
 }
 
 
-/* right-justify degree dates */
+
+/* Education formatting */
+.edu-school {
+  margin-bottom: 1.5rem;
+}
+
 .edu-degree {
   margin-left: 1rem;
   display: flex;
