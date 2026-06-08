@@ -4,9 +4,20 @@
   --fg-color: #dcdfe4;            /* White */
   --link-color: #61afef;          /* Blue */
   --hover-color: #56b6c2;         /* Cyan */
-  --border-color: #dcdfe4;        /* White */
   --accent-color: #e06c75;        /* Red */
   --fg-muted-color: #919baa;      /* Grey */
+}
+
+/* light mode override */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: #fafafa;          /* White */
+    --fg-color: #383a42;          /* Black */
+    --link-color: #0184bc;        /* Blue */
+    --hover-color: #0997b3;       /* Cyan */
+    --accent-color: #e45649;      /* Red */
+    --fg-muted-color: #5f626c;    /* Grey */
+  }
 }
 
 /* global settings */
@@ -52,7 +63,7 @@ a:hover {
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--border-color);
+  border: 2px solid var(--fg-color);
 }
 .sidebar h1 {
   margin: 0px 0 -10px 0;
