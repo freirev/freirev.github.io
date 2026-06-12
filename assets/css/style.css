@@ -5,8 +5,8 @@
   --link-color: #61afef;          /* Blue */
   --hover-color: #56b6c2;         /* Cyan */
   --accent-color: #e06c75;        /* Red */
-  --fg-muted-color: #828997; /*#abb2bf;*/
- /* #919baa;      /* Grey */
+  --venue-color: #98c379;         /* Green */
+  --fg-muted-color: #828997;      /* Grey */
 }
 
 /* light mode override */
@@ -17,6 +17,7 @@
     --link-color: #0184bc;        /* Blue */
     --hover-color: #0997b3;       /* Cyan */
     --accent-color: #e45649;      /* Red */
+    --venue-color: #50a14f;       /* Green */
     --fg-muted-color: #5f626c;    /* Grey */
   }
 }
@@ -91,11 +92,8 @@ a:hover {
   margin-right: 8px;
 }
 
-.social-links a {
+.social-links :where(a) {
   color: var(--fg-muted-color);
-}
-.social-links a:hover {
-  color: var(--hover-color);
 }
 
 /* right main-content area */
@@ -138,7 +136,7 @@ h2 {
 
 
 
-/* Education formatting */
+/* education formatting */
 .edu-school {
   margin-bottom: 1.5rem;
 }
@@ -148,6 +146,47 @@ h2 {
   display: flex;
   justify-content: space-between;
 }
+
+/* publications formatting */
+.pub-item {
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+.pub-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.pub-authors {
+  font-size: 0.95rem;
+  color: var(--fg-muted-color);
+}
+
+.pub-venue {
+  font-size: 0.95rem;
+  color: var(--venue-color);
+}
+
+.pub-links i {
+  font-size: 0.85rem;
+  width: 15px;
+  margin-right: 5px;
+}
+
+.pub-links a {
+  margin-right: 0.8rem;
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--link-color);
+}
+.pub-links a:hover {
+  text-decoration: underline;
+  color: var(--hover-color);
+}
+
+
 
 /* anti-scraper email class */
 .reverse-email {
