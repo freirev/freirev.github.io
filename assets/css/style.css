@@ -148,6 +148,21 @@ h2 {
 }
 
 /* publications formatting */
+
+#publications-view ol {
+  padding-left: 20px;
+  margin-left: 0;
+}
+
+#publications-view ol li::marker {
+  color: var(--fg-muted-color);
+  font-weight: bold;
+}
+
+#publications-view li.pub-item {
+  padding-left: 0.25rem;
+}
+
 .pub-item {
   margin-bottom: 2rem;
   line-height: 1.4;
