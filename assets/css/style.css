@@ -61,7 +61,7 @@ a:hover {
   position: sticky;
   top: 60px;
   height: fit-content;
-  width: 240px;
+  width: 245px;
   flex-shrink: 0;
 }
 .profile-pic {
